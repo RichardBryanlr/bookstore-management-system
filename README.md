@@ -1,14 +1,108 @@
 # Bookstore Management System
 
-A robust Command Line Interface (CLI) application developed in **Java** to streamline book inventory control and sales processing. This project demonstrates core **Object-Oriented Programming (OOP)** principles such as encapsulation, constructors, and list management.
+Console-based bookstore management system developed in Java.
+This application allows managing book inventory, processing sales, and tracking sold items.
 
-## Key Features
-* **Inventory Tracking:** Add new books with auto-generated unique IDs and duplicate detection.
-* **Dynamic Stock Management:** Real-time updates on stock levels with low-stock alerts (notified when < 5 units).
-* **Sales Workflow:** Complete checkout simulation with multiple payment methods (Credit, Debit, Cash, and Pix).
-* **Data Updates:** Search and modify existing book details (title, author, price, and quantity) via ID.
-* **Sales Reporting:** Detailed logs of all sold items and current stock status.
+## Features
 
-## Technical Stack
-* **Language:** Java 17+
-* **Concepts:** CRUD, OOP, Collections (ArrayList), Input/Output Handling (Scanner), and Localization.
+* Add new books with automatically generated IDs
+* Prevent duplicate book entries
+* Sell books with stock validation
+* Multiple payment methods (Credit, Debit, Money, Pix)
+* Installment handling for credit payments
+* Update book information (title, author, price, stock)
+* Low stock and sold-out alerts
+* List all available books in stock
+* Track and list sold books
+
+## Technologies
+
+* Java
+* Object-Oriented Programming (OOP)
+* Collections (ArrayList)
+
+## Project Structure
+
+```
+src/
+ ├── application/
+ │    └── Program.java
+ └── entities/
+      └── Product.java
+```
+
+## How It Works
+
+The system stores data in memory using lists:
+
+* A list for books in stock
+* A list for sold books
+
+Each book contains:
+
+* ID
+* Title
+* Author
+* Price
+* Quantity in stock
+* Quantity sold
+
+The application runs through a terminal menu where the user can perform all operations.
+
+## How to Run
+
+1. Clone the repository
+
+```
+git clone https://github.com/your-username/bookstore-management-system.git
+```
+
+2. Navigate to the project folder
+
+```
+cd bookstore-management-system
+```
+
+3. Compile the project
+
+```
+javac application/Program.java
+```
+
+4. Run the application
+
+```
+java application.Program
+```
+
+## Example Menu
+
+```
+1. Add a new book in stock
+2. Sell some book from stock
+3. Update a product data
+4. Show stock
+5. List all sold books
+6. Exit
+```
+
+## Business Rules
+
+* Book IDs are randomly generated and guaranteed to be unique
+* A book cannot be sold if it is out of stock
+* Alerts are displayed when stock is low (≤ 5 units)
+* Sales update both stock quantity and sold quantity
+* Payment must be confirmed before completing a sale
+
+## Improvements (Future Work)
+
+* Persist data using a database or file
+* Add search functionality (by title or author)
+* Improve validation for user input
+* Implement sales reports (total revenue, best-selling books)
+* Create REST API with Spring Boot
+* Add graphical user interface (GUI)
+
+## Author
+
+Richard Bryan
